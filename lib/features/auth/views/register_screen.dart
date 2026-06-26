@@ -65,7 +65,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Center(child: AppLogo(size: 35)),
+                const Center(child: AppLogo(size: 34)),
                 const SizedBox(height: 36),
                 const SizedBox(height: 32),
                 TextFormField(
