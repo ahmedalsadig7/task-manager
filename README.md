@@ -10,11 +10,9 @@ A Flutter Task Manager app built as a technical assessment for **Electro Pi** (F
 |--------|-------|----------|
 | ![Splash](screenshots/splash.png) | ![Login](screenshots/login.png) | ![Register](screenshots/register.png) |
 
-| Projects | Project Details | Profile |
-|----------|----------------|---------|
-| ![Projects](screenshots/projects.png) | ![Details](screenshots/details.png) | ![Profile](screenshots/profile.png) |
-
-> Place screenshots in a `screenshots/` folder at the project root.
+| Projects | Project Details | Add Task | Profile |
+|----------|----------------|----------|---------|
+| ![Projects](screenshots/projects.png) | ![Project Details](screenshots/project_details.png) | ![Add Task](screenshots/add_task.png) | ![Profile](screenshots/profile.png) |
 
 ---
 

@@ -65,16 +65,8 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Center(child: AppLogo(size: 28)),
+                const Center(child: AppLogo(size: 35)),
                 const SizedBox(height: 36),
-                const Text(
-                  'Join Task\nManager today!',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w900,
-                    height: 1.1,
-                  ),
-                ),
                 const SizedBox(height: 32),
                 TextFormField(
                   controller: _nameCtrl,
