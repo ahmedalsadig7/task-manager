@@ -1,5 +1,30 @@
 import 'package:flutter/material.dart';
 
+class _SlidePageTransitionsBuilder extends PageTransitionsBuilder {
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final tween = Tween(
+      begin: Offset(isRtl ? -1.0 : 1.0, 0.0),
+      end: Offset.zero,
+    ).chain(CurveTween(curve: Curves.easeInOut));
+    return SlideTransition(position: animation.drive(tween), child: child);
+  }
+}
+
+final _pageTransitions = PageTransitionsTheme(
+  builders: {
+    TargetPlatform.android: _SlidePageTransitionsBuilder(),
+    TargetPlatform.iOS: _SlidePageTransitionsBuilder(),
+  },
+);
+
 class AppTheme {
   static const cream = Color(0xFFF5EDD8);
   static const _ink = Color(0xFF1C1C1E);
@@ -8,6 +33,7 @@ class AppTheme {
 
   static ThemeData get light => ThemeData(
     useMaterial3: true,
+    pageTransitionsTheme: _pageTransitions,
     scaffoldBackgroundColor: cream,
     colorScheme: const ColorScheme.light(
       primary: _ink,
@@ -105,6 +131,7 @@ class AppTheme {
 
   static ThemeData get dark => ThemeData(
     useMaterial3: true,
+    pageTransitionsTheme: _pageTransitions,
     scaffoldBackgroundColor: _darkBg,
     colorScheme: const ColorScheme.dark(
       primary: cream,
